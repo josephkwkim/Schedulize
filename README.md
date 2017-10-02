@@ -5,4 +5,4 @@ Written in Python, powered by Pandas and Scikit-Learn.
 Data from Faculty Course Evaluations and the ScottyLabs API.
 
 
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+![Schedulize Icon](https://octodex.github.com/images/yaktocat.png)
