@@ -17,9 +17,9 @@ class Course(object):
         self.department = int(self.number[:2])
         self.lsa = lsa
     def __str__(self):
-        return (self.number)
+        return self.number
     def __eq__(self, other):
-        return ((self.number == other.number) and (self.lec_name == other.lec_name))
+        return (self.number == other.number) and (self.lec_name == other.lec_name)
     def __hash__(self):
         return hash(self.number+str(self.start)+str(self.lec_name))
     def similarity(self,course2):
