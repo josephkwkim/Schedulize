@@ -20,7 +20,7 @@ def obtainSchedule(fileName):
 
     count = 0
     for course in courses:
-        print (course)
+        print(course)
         cDeets = course.splitlines()
         for deet in cDeets:
             if "SUMMARY" in deet:
