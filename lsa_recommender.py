@@ -9,6 +9,7 @@ import numpy as np
 import pickle
 import cmu_course_api
 import sys
+from CONSTANTS import *
 
 #External Files
 from Course_class import Course
@@ -24,9 +25,6 @@ with open('data\\lsa_vectors.json') as file:
     lsa_map = json.load(file)
 with open('data\\processed_classes.p','rb') as file:
     semester_classes = pickle.load(file)
-
-fpath = 'data\\schedules\\joe_schedule.ics'
-audit_path = 'kim_joe_academic_audit.txt'
 
 class Schedule(object):
     def __init__(self,num,name,beg,end,days):
@@ -78,8 +76,8 @@ def parse_current_classes(lsa_map):
                 days,lsa,lec_name,data[course]['desc'],data[course]['prereqs']))
     return classes
 
-def parse_calendar(fpath):
-    with open(fpath) as file:
+def parse_calendar(schedulePath):
+    with open(schedulePath) as file:
         calendar = Calendar(file)
     courses = []
     for event in calendar.events:
@@ -90,8 +88,8 @@ def parse_calendar(fpath):
                                 event.end.datetime,days))
     return courses
 
-def parse_audit_to_text(fpath):
-    audit = pd.DataFrame(audit_info(fpath)['Course Number'])
+def parse_audit_to_text(schedulePath):
+    audit = pd.DataFrame(audit_info(schedulePath)['Course Number'])
     audit['Course Number'] = audit['Course Number'].apply(str)
     audit['Course Number'] = audit['Course Number'].apply \
                                         (lambda x: x[:2] + '-' + x[2:])
@@ -123,8 +121,8 @@ def create_days_from_event(event):
         days.append(days_dict[day])
     return days
 
-def filter_available_classes(fpath):
-    your_classes = parse_calendar(fpath)
+def filter_available_classes(schedulePath):
+    your_classes = parse_calendar(schedulePath)
     dont_take = set()
     for potential in semester_classes: #0(n)
         for day in potential.days: #O(3)
@@ -259,9 +257,9 @@ def recommend_classes_avg(num,schedulepath,auditpath,available=True):
     return most_similar.head(num)
 
 def repickle(lsa_map):
-    fpath = 'data\\processed_classes.p'
+    schedulePath = 'data\\processed_classes.p'
     semester_classes = parse_current_classes(lsa_map)
-    with open(fpath,'wb') as file:
+    with open(schedulePath,'wb') as file:
         pickle.dump(semester_classes,file)
     print ('done')
 
@@ -294,10 +292,10 @@ def get_new_semester_data(semester):
     print('done!')
 
 
-#available_classes = filter_available_classes(fpath)
-#youve_taken = parse_audit_to_text(audit_path)
+#available_classes = filter_available_classes(schedulePath)
+#youve_taken = parse_audit_to_text(auditPath)
 
-#print(recommend_classes_avg(30,fpath,audit_path,available=False))
+#print(recommend_classes_avg(30,schedulePath,auditPath,available=False))
 #print (time.time() - a)
 
 

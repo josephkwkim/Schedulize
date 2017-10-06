@@ -6,14 +6,7 @@ from lsa_recommender import filter_available_classes
 import os
 import json
 from Course_class import Course
-import time
 
-a = time.time()
-
-#schedule_path = 'data\\schedules\\joe_schedule.ics'
-#audit_path = '0_you_michael_academic_audit.txt'
-#audit = audit_info(audit_path)
-#available_classes = filter_available_classes(schedule_path)
 with open('data\\fce_json.json') as file:
     fce_dict = json.load(file)
 
@@ -25,9 +18,7 @@ def better_fce():
     keep_columns = ['Course ID','1: Hrs Per Week 9', '10: Overall course']
     files = [f for f in os.listdir(path)]
     for file in files:
-        #print (file)
         df = pd.read_csv(path + file,names=columns)
-        #print (df.shape)
         df = df[keep_columns]
         for course in df['Course ID'].unique():
             temp = df.copy()
@@ -132,9 +123,6 @@ def get_score(diff,rating,predicted_hours,pref_difficulty,pref_rating,must_gened
 
 #course_rankings = preference_score(available_classes,audit,4.5,5,False)
 #top = top_preferred_courses(course_rankings)
-
-#print (top)
-#print ('\n', time.time()-a)
 
 def decision_tree_master(available_courses, audit, pref_difficulty, pref_rating,must_gened):
     course_rankings = preference_score(available_courses, audit, pref_difficulty, pref_rating,must_gened)
