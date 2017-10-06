@@ -2,8 +2,8 @@
 # which courses a student has taken in the past
 # and what grades they got in those classes
 
-import numpy as np
 import re
+import numpy as np
 import pandas as pd
 
 def audit_info(fpath, fullPath=False,string=False):
