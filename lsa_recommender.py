@@ -26,12 +26,6 @@ with open('data\\lsa_vectors.json') as file:
 with open('data\\processed_classes.p','rb') as file:
     semester_classes = pickle.load(file)
 
-<<<<<<< HEAD
-fpath = 'data\\schedules\\joe_schedule.ics'
-audit_path = 'kim_joe_academic_audit.txt'
-
-=======
->>>>>>> global path imports for lsa
 class Schedule(object):
     def __init__(self,num,name,beg,end,days):
         self.name = name
