@@ -1,6 +1,5 @@
-import numpy as np
-import pandas as pd
 import pickle
+import pandas as pd
 
 # Return 0 or 1 based on whether Course fulfills a General Education Requirement
 def lookupGenEd(cNum, college):
