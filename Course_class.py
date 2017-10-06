@@ -1,8 +1,8 @@
 import numpy as np
 
 class Course(object):
-    def __init__(self,num,beg,end,name,days,lsa,lec_name,
-                 desc=None,prereq=None):
+    def __init__(self, num, beg, end, name, days, lsa, lec_name,
+                 desc=None, prereq=None):
         self.number = num
         self.start = beg.time()
         self.end = end.time()
@@ -16,6 +16,7 @@ class Course(object):
         self.prereqs = prereq
         self.department = int(self.number[:2])
         self.lsa = lsa
+
     def __str__(self):
         return self.number
     def __eq__(self, other):
