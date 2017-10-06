@@ -1,0 +1,64 @@
+RICHARD ZHAO
+
+Course-Requirement Matchings
+BS in Mathematics/Discrete Mathematics and Logic 2008 Catalog
+
+---------------Mathematical Science and Computer Science-----------
+ 1. Computer Science Core       : 15-122 Fall   '17 *    10.0    
+                                 2 unfilled courses
+ 2. Concepts of Mathematics     : 21-128 Fall   '16 B    12.0    
+ 3. Discrete Mathematics        : 21-228 Spring '17 C     9.0    
+ 4. Matrix Algebra              :1 unfilled course
+ 5. Basic Logic                 :1 unfilled course
+ 6. Combinatorics               :1 unfilled course
+ 7. Linear Algebra              :1 unfilled course
+ 8. Real Analysis I             :1 unfilled course
+ 9. Algebraic Structures        :1 unfilled course
+
+-------------------Discrete Mathematics and Logic------------------
+10. Discrete Math and Logic     :3 unfilled courses
+11. Math Electives              :4 unfilled courses
+12. Computer Science Electives  : 15-322 Fall   '17 *     9.0    
+                                 1 unfilled course
+
+-----------------MCS Science Core Course Requirements-------------
+13. Calculus                    : 21-120 Fall   '16 AP   10.0    
+                                  21-122 Fall   '16 AP   10.0    
+14. Modern Biology              :1 unfilled course
+15. Chemistry                   : 09-105 Fall   '16 B    10.0    
+16. Physics 1                   :1 unfilled course
+17. Physics 2                   :1 unfilled course
+18. Computer Science            : 15-112 Spring '17 B    12.0    
+19. CSW                         : 99-101 Fall   '16 P     3.0    
+
+-------------------MCS H&SS and Fine Arts Requirements------------
+20. Designated Writing Course   : 76-101 Fall   '16 A     9.0    
+21. Cog, Choice, and Behavior   :1 unfilled course
+22. Econ, Social, and Pol Inst. :1 unfilled course
+23. Cultural Analysis           :1 unfilled course
+24. Non-Tech Electives          : 66-011 Fall   '16 AP    9.0    
+                                  76-011 Fall   '16 AP    9.0    
+                                  88-281 Fall   '17 *     9.0    
+                                 9.00 unfilled Units
+
+NOTE: Check http://www.cmu.edu/mcs/education/edu_HSSFA.html 
+      for up-to-date HSS & CFA Elective Requirements.
+Total number of units taken 360 with at most 9 units ROTC/Phys Ed?
+    *** Not Satisfied ***
+Not Matched:
+ 03-161 Spring '17 B     9.0     (Unused)
+ 21-126 Spring '17 A     3.0     (Unused)
+ 21-240 Fall   '17 *    10.0     (Unused)
+ 36-201 Fall   '16 AP    9.0     (Unused)
+ 36-202 Fall   '17 *     9.0     (Unused)
+ 38-101 Fall   '16 A     6.0     (Unused)
+ 98-239 Spring '17 P     3.0     (Unused)
+ 21-241 Fall   '16 W    10.0     (Unreal)
+ 09-105 Fall   '16 AP   10.0     (Repeated)
+
+ ANDREW_ID:rzhao2
+CLASSLEVEL:Sophomore
+   CUM_QPA:   3.13
+UNITPASSED: 133.00
+UNIT_INPRG:  47.00
+  UPCOMING:   0.00

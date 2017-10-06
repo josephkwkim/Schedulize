@@ -1,0 +1,80 @@
+MCS Science Core Course Requirements
+------------------------------------
+ 1. Calculus 1                  : 21-120 Fall   '16 A    10.0    
+ 2. Calculus 2                  : 21-122 Spring '17 A    10.0    
+ 3. Modern Biology              : 03-121 Fall   '16 A     9.0    
+ 4. Chemistry                   : 09-105 Spring '17 A    10.0    
+ 5. Physics 1                   :1 unfilled course
+ 6. Physics 2                   :1 unfilled course
+ 7. Computer Science            :1 unfilled course
+ 8. CSW                         : 99-101 Fall   '16 P     3.0    
+
+MSC H&SS and Fine Arts Requirements
+-----------------------------------
+
+    Writing
+    -------
+ 9. Designated Writing Course   : 76-101 Spring '17 A     9.0    
+
+    Distributional Course Requirements
+    ----------------------------------
+10. Cog, Choice, and Behavior   : 85-011 Fall   '16 AP    9.0    
+11. Econ, Social, and Pol Inst. :1 unfilled course
+12. Cultural Analysis           : 79-104 Fall   '16 A     9.0    
+13. Non-Tech Electives          : 85-102 Fall   '16 A     9.0    
+                                  85-221 Fall   '17 *     9.0    
+                                  85-241 Fall   '17 *     9.0    
+                                  85-508 Spring '17 A     9.0    
+
+    Free Electives
+    --------------
+14. Free Electives - Restricted : 03-220 Fall   '17 *     9.0    
+                                  21-111 Fall   '16 AP   10.0    
+                                  36-144 Spring '17 A     9.0    
+                                  36-202 Spring '17 A     9.0    
+15. Free Electives - Unrestricte: 85-507 Fall   '17 *     9.0    
+
+Biological Sciences Major Requirements
+--------------------------------------
+
+Biology Requirements
+03-121 Modern Biology taken as part of science core.
+16. Biochemistry                :1 unfilled course
+17. Cell Biology                :1 unfilled course
+18. CompBio                     :2 unfilled courses
+19. Genetics                    :1 unfilled course
+20. Exper Genetics/Molec Biology:1 unfilled course
+21. Exper Biochem/Cell Dev      :1 unfilled course
+22. Topics in Research          :2.00 unfilled Units
+23. Colloquium                  : 03-201 Fall   '17 *     2.0    
+24. Bio Electives - 54 Units    : 36-201 Fall   '16 A     9.0    
+                                  85-219 Fall   '17 *     9.0    
+                                 36.00 unfilled Units
+NOTE:36-247 double counts as a Biology Elective AND Statistical Reasoning 
+ course for SHS students.
+
+Chemistry Requirements
+25. Modern Chem II              : 09-106 Fall   '17 *    10.0    
+26. Organic Chem                : 09-217 Fall   '17 *     9.0    
+                                 1 unfilled course
+27. Exper Tech Chem             :2 unfilled courses
+
+
+OPTIONS
+
+A minimum of 18.0 upper division units
+ 1. Check                       :18.00 unfilled Units
+
+For A maximum of 36 units of undergraduate research
+    *** Not Satisfied ***
+ 1. Genetics Option             :4 unfilled courses
+ 1. Biochemistry Option         :3 unfilled courses
+ 1. Biophysics Option           :3 unfilled courses
+ 1. Cell Biology Option         :3 unfilled courses
+ 1. Developmental Biology Option:3 unfilled courses
+ 1. Molecular Biology Option 201:4 unfilled courses
+ 1. Computational Biology Option:3 unfilled courses
+Neuroscience Option
+ 1. Required Courses            :2 unfilled courses
+ 2. Additional Courses          : 85-219 Fall   '17 *     9.0    
+                                 1 unfilled course

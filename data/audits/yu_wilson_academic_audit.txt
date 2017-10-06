@@ -1,0 +1,64 @@
+WILSON B. YU
+
+Course-Requirement Matchings
+For B.S. in Statistics and Machine Learning (2016 Catalogue)
+
+MATHEMATICS REQUIREMENTS
+ 1. Calc. Course 1              : 21-120 Fall   '16 AP   10.0    
+ 2. Intergration/Diff Eq        : 21-122 Fall   '16 AP   10.0    
+ 3. Multivar. Calc.             : 21-256 Spring '17 A     9.0    
+ 4. Concepts of Math            : 21-127 Spring '17 A    10.0    
+ 5. Matrix Algebra              : 21-240 Fall   '16 A    10.0    
+
+DATA ANALYSIS
+ 6. Beginning                   : 36-201 Fall   '16 AP    9.0    
+ 7. Intermediate                : 36-202 Fall   '16 A     9.0    
+ 8. Advanced Elective           :1 unfilled course
+ 9. Advanced Elective           :1 unfilled course
+
+ADVANCED METHODOLOGY SEQUENCE
+10. Modern Regression           :1 unfilled course
+11. Adv. Data Analysis          :1 unfilled course
+
+STATISTICAL THEORY
+12. Intro. to Prob. Theory      : 36-225 Fall   '17 *     9.0    
+13. Intro. to Stat. Inference   :1 unfilled course
+
+COMPUTING
+14. Statistical Computing       :1 unfilled course
+
+Machine Learning
+15. Fundamentals of Programming : 15-112 Fall   '16 AP   12.0    
+16. Principles of Imperative Com: 15-122 Spring '17 A    10.0    
+17. Machine Learning            :1 unfilled course
+18. Algorithms and Adv. Data Str:1 unfilled course
+
+Machine Learning Advanced Elective
+19. Elective                    :1 unfilled course
+Advanced Machine Learning Elective
+360 minimum units required for all Dietrich College degrees
+
+Dietrich College (DC) General Education Program (GenEd)
+ 1. COMMUNICATING 76-101        : 76-101 Spring '17 A     9.0    
+ 2. COMMUNICATING 9 units       :9.00 unfilled Units
+
+ 3. REFLECTING 79-104           : 79-104 Fall   '16 A     9.0    
+ 4. REFLECTING 9 units          : 80-214 Fall   '17 *     9.0    
+
+ 5. MODELING/MATH SCI 9 units   : 21-256 Spring '17 A     9.0    
+ 6. MODELING/NAT SCI 9 units    : 09-105 Fall   '16 AP   10.0    
+ 7. MODELING/OTHER 9 units      : 21-127 Spring '17 A    10.0    
+
+ 8. DECIDING 36-201             : 36-201 Fall   '16 AP    9.0    
+ 9. DECIDING 9 units            : 73-100 Fall   '16 A     9.0    
+
+10. CREATING 18 units           : 15-322 Fall   '17 *     9.0    
+                                  57-103 Fall   '17 *     3.0    
+                                 6.00 unfilled Units
+
+11. Complete 18 more units      : 36-202 Fall   '16 A     9.0    
+                                  73-230 Fall   '17 *     9.0    
+
+12. UNIVERSIRY REQ. C@CM        : 99-101 Fall   '16 P     3.0    
+
+13. DC FRESHMAN SEMINAR         : 65-103 Fall   '16 A     9.0

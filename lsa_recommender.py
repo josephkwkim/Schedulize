@@ -26,7 +26,7 @@ with open('data\\processed_classes.p','rb') as file:
     semester_classes = pickle.load(file)
 
 fpath = 'data\\schedules\\joe_schedule.ics'
-audit_path = 'coffin_howard_academic_audit.txt'
+audit_path = 'kim_joe_academic_audit.txt'
 
 class Schedule(object):
     def __init__(self,num,name,beg,end,days):

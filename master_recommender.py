@@ -3,7 +3,7 @@ import pandas as pd
 from calParser import obtainSchedule
 from audit_parser import audit_info
 from lsa_recommender import export_to_master,filter_available_classes
-from decision_tree import preference_score,top_preferred_courses
+from decision_tree import decision_tree_master
 from recommender_system import loadAudits, inputData, buildRecommender, makePrediction, compileDepartScores
 import time
 import json
@@ -28,7 +28,7 @@ X_audits_grades = dict()
 
 auditPathCalvin = "data/audits/"
 schedulePathCalvin = "data/schedules/"
-auditPath = '0_kim_joe_academic_audit.txt'
+auditPath = '0_you_michael_academic_audit.txt'
 schedulePath = 'data\\schedules\\joe_schedule.ics'
 audit = audit_info(auditPath)
 available_classes = filter_available_classes(schedulePath)
@@ -43,22 +43,28 @@ print("Recommender Scores:")
 print(dScores)
 print()
 
+calvinTime = time.time()
+
 # Latent Sentiment Analysis
 lsa_predictions = export_to_master(100, schedulePath, auditPath)
 print("LSA Predictions:")
 print(lsa_predictions)
 print()
 
+joeTime = time.time()
+
 # Decision Tree
-pref_difficulty = 4
+pref_difficulty = 1
 pref_rating = 5
 gen_ed = False
 
-course_rankings = preference_score(available_classes, audit, pref_difficulty, pref_rating, gen_ed)
-decision_tree_rankings = top_preferred_courses(course_rankings)
+decision_tree_rankings = decision_tree_master(available_classes, audit,
+                                   pref_difficulty, pref_rating, gen_ed)
 print("Decision Tree Predictions:")
 print(decision_tree_rankings)
 print()
+
+wilsonTime = time.time()
 
 course_score_d = dict()
 
@@ -125,3 +131,8 @@ print()
 endTime = time.time()
 print("Time Elapsed:", endTime - startTime, "sec")
 print()
+
+print("Calvin Time:", calvinTime - startTime)
+print("Joe Time:", joeTime - calvinTime)
+print("Wilson Time:", wilsonTime - joeTime)
+print("Compiling Time:", endTime - wilsonTime)
