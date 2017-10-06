@@ -19,11 +19,14 @@ class Course(object):
 
     def __str__(self):
         return self.number
+
     def __eq__(self, other):
         return (self.number == other.number) and (self.lec_name == other.lec_name)
+
     def __hash__(self):
         return hash(self.number+str(self.start)+str(self.lec_name))
-    def similarity(self,course2):
+
+    def similarity(self, course2):
         '''
         :param course2: {class number (str), course instance,lsa_list}
         :return: similarity between the two classes
@@ -34,7 +37,8 @@ class Course(object):
             course2 = course2
         else:
             course2 = course2.lsa
-        return cosine_similarity(self.lsa,course2)
+        return cosine_similarity(self.lsa, course2)
+
     def recitations(self):
         '''
         returns a list of recitations corresponding to each lecture
@@ -48,6 +52,7 @@ class Course(object):
         except:
             recitations = []
         return recitations
+
     def recitation_belongs(self,recitation):
         '''
         returns true if recitation belongs to that class, false otherwise
