@@ -6,11 +6,11 @@ import re
 import numpy as np
 import pandas as pd
 
-def audit_info(fpath, fullPath=False,string=False):
+def audit_info(fpath, fullPath=False, string=False):
     courses_dict = {'Course Number': [], 'Grade': []}
-    if fullPath == False and string == False:
+    if (not fullPath) and (not string):
         text_lines = open("data\\audits\\"+fpath, "r").read().splitlines()
-    elif string == True:
+    elif string:
         text_lines = fpath.splitlines()
     else:
         text_lines = open(fpath, "r").read().splitlines()
