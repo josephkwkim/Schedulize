@@ -22,8 +22,6 @@ if __name__ == '__main__':
 
     auditPathCalvin = "data/audits/"
     schedulePathCalvin = "data/schedules/"
-    auditPath = 'sample_academic_audit.txt'
-    schedulePath = 'data\\schedules\\sample_schedule.ics'
     audit = audit_info(auditPath)
     available_classes = filter_available_classes(schedulePath)
 
