@@ -10,10 +10,10 @@ def lookupGenEd(cNum, college):
         with open(picklepath,'rb') as file:
             gen_eds = pickle.load(file)
     except:
-        df = pd.read_csv(fileName,names=['Dept','Num','Title','1','2'])
+        df = pd.read_csv(fileName,names=['Dept', 'Num', 'Title', '1', '2'])
         gen_eds = set(df['Dept'].values)
-        with open(picklepath,'wb') as file:
-            pickle.dump(gen_eds,file)
+        with open(picklepath, 'wb') as file:
+            pickle.dump(gen_eds, file)
 
     return cNum in gen_eds
 
