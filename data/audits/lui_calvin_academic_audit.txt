@@ -1,0 +1,92 @@
+CALVIN H. LUI
+
+Course-Requirement Matchings
+For BS Information Systems
+2015-2016 Catalog Year Requirements
+ -Some courses in 'Not Matched:' are used to fulfill requirements.
+
+DOUBLE COUNTING: IS Students may double count no more than two
+courses used to fulfill any IS major requirement in the
+Professional Core, Disciplinary Core and Content Area with any
+combination of additional majors, minors, or graduate programs.
+Only one course may double count with any minor.
+
+No course can count for more than one requirement within the major.
+
+There are no double counting restrictions on the DC GenEd
+Requirements and IS Prerequisite courses.
+
+PREREQUISITES
+ 1. Calculus sequence (2)       : 21-120 Fall   '16 AP   10.0    
+                                  21-122 Fall   '16 AP   10.0    
+ 2. Statistical Reasoning       :1 unfilled course
+ 3. Computer Science            : 15-122 Fall   '17 *    10.0    
+    15-110 (or 15-111) is taken as a CS prerequisite unless a
+           student places directly into 15-112 or 15-121.
+    15-112 (starting Fall 2011) is taken as a CS prerequisite
+           unless a student places directly into 15-121.
+
+PROFESSIONAL CORE
+ 4. The Info. Systems Milieux   : 67-344 Fall   '17 *     9.0    
+ 5. DB Design & Development     :1 unfilled course
+ 6. Appl. Design & Development  :1 unfilled course
+ 7. Software Development Proj.  :1 unfilled course
+ 8. Innovation in Info. Systems :1 unfilled course
+ 9. Prof Core Elective: 6-12 uni:1 unfilled course
+
+DISCIPLINARY CORE
+10. Professional Communications : 70-340 Fall   '17 *     9.0    
+11. Quant. Analys. & Resrch. Mtd: 36-225 Fall   '17 *     9.0    
+12. Organizations, Policy, & S.S:1 unfilled course
+
+CONTENT AREA
+No Content Area course may also be used to fulfill a
+Disciplinary Core requirement
+
+13. Content Area (27 units)     :27.00 unfilled Units
+
+360 minimum units required for all Dietrich College degrees
+
+Dietrich College (DC) General Education Program (GenEd)
+ 1. COMMUNICATING 76-101        : 76-101 Spring '17 A     9.0    
+ 2. COMMUNICATING 9 units       :9.00 unfilled Units
+
+ 3. REFLECTING 79-104           : 79-104 Fall   '16 A     9.0    
+ 4. REFLECTING 9 units          : 79-015 Fall   '16 AP    9.0    
+
+ 5. MODELING/MATH SCI 9 units   : 21-256 Spring '17 A     9.0    
+ 6. MODELING/NAT SCI 9 units    :9.00 unfilled Units
+ 7. MODELING/OTHER 9 units      : 15-112 Fall   '16 B    12.0    
+
+ 8. DECIDING 36-201             : 70-207 Spring '17 A     9.0    
+ 9. DECIDING 9 units            : 73-100 Fall   '16 A     9.0    
+
+10. CREATING 18 units           :18.00 unfilled Units
+
+11. Complete 18 more units      : 21-127 Spring '17 C    10.0    
+                                  85-102 Fall   '16 A     9.0    
+
+12. UNIVERSIRY REQ. C@CM        : 99-101 Fall   '16 P     3.0    
+
+13. DC FRESHMAN SEMINAR         :1 unfilled course
+Not Matched:
+ 15-112 Fall   '16 B    12.0     (Unused)
+ 21-127 Spring '17 C    10.0     (Unused)
+ 21-256 Spring '17 A     9.0     (Unused)
+ 70-100 Fall   '16 A     9.0     (Unused)
+ 70-110 Spring '17 A     9.0     (Unused)
+ 70-122 Fall   '17 *     9.0     (Unused)
+ 70-207 Spring '17 A     9.0     (Unused)
+ 73-100 Fall   '16 A     9.0     (Unused)
+ 76-101 Spring '17 A     9.0     (Unused)
+ 79-015 Fall   '16 AP    9.0     (Unused)
+ 79-104 Fall   '16 A     9.0     (Unused)
+ 85-102 Fall   '16 A     9.0     (Unused)
+ 99-101 Fall   '16 P     3.0     (Unused)
+
+ ANDREW_ID:clui
+CLASSLEVEL:Sophomore
+   CUM_QPA:   3.66
+UNITPASSED: 126.00
+UNIT_INPRG:  46.00
+  UPCOMING:   0.00

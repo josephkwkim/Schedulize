@@ -10,10 +10,10 @@ import time
 
 a = time.time()
 
-schedule_path = 'data\\schedules\\joe_schedule.ics'
-audit_path = '0_kim_joe_academic_audit.txt'
-audit = audit_info(audit_path)
-available_classes = filter_available_classes(schedule_path)
+#schedule_path = 'data\\schedules\\joe_schedule.ics'
+#audit_path = '0_you_michael_academic_audit.txt'
+#audit = audit_info(audit_path)
+#available_classes = filter_available_classes(schedule_path)
 with open('data\\fce_json.json') as file:
     fce_dict = json.load(file)
 
@@ -49,7 +49,7 @@ def preference_score(available_courses, audit, pref_difficulty, pref_rating,must
     # Scores range from very negative (classes to definitely avoid) to 190
     gpa = getGPA(audit)
 
-    course_scores_df = pd.DataFrame(available_classes,columns=['Course'])
+    course_scores_df = pd.DataFrame(available_courses,columns=['Course'])
     course_scores_df['Number'] = course_scores_df['Course'].apply(lambda x: x.number)
     course_scores_df['Data'] = course_scores_df['Number'].apply \
                         (lambda x: fce_dict[x] if x in fce_dict else np.nan)
@@ -135,3 +135,10 @@ def get_score(diff,rating,predicted_hours,pref_difficulty,pref_rating,must_gened
 
 #print (top)
 #print ('\n', time.time()-a)
+
+def decision_tree_master(available_courses, audit, pref_difficulty, pref_rating,must_gened):
+    course_rankings = preference_score(available_courses, audit, pref_difficulty, pref_rating,must_gened)
+
+    decision_tree_rankings = top_preferred_courses(course_rankings)
+
+    return decision_tree_rankings
