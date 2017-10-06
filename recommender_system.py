@@ -184,14 +184,3 @@ def compileDepartScores(courses, pList):
 
     # return [(k, departDict[k]) for k in sorted(departDict, key=departDict.get, reverse=True)]
     return departDict
-
-"""
-recSystem = buildRecommender()
-model, courses = (recSystem[0], recSystem[1]), recSystem[2]
-user = 0  # Index for Current User - Denote with 0_last_first_academic_audit.txt
-pList = makePrediction(model, user)
-dScores = compileDepartScores(courses, pList)
-
-for item in dScores:
-    print("Department " + str(item[0]) + ": " + str(item[1]))
-"""
