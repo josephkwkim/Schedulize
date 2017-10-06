@@ -22,14 +22,14 @@ with open('data\\lecture_recitation.json') as file:
     recs = json.load(file)
 with open('data\\lsa_vectors.json') as file:
     lsa_map = json.load(file)
-with open('data\\processed_classes.p','rb') as file:
+with open('data\\processed_classes.p', 'rb') as file:
     semester_classes = pickle.load(file)
 
 fpath = 'data\\schedules\\joe_schedule.ics'
 audit_path = 'kim_joe_academic_audit.txt'
 
 class Schedule(object):
-    def __init__(self,num,name,beg,end,days):
+    def __init__(self, num, name, beg, end, days):
         self.name = name
         self.number = num
         self.start = beg.time()
@@ -39,7 +39,7 @@ class Schedule(object):
         return (self.num)
 
 class Recitation(object):
-    def __init__(self,num,lec_name,start,end,days):
+    def __init__(self, num, lec_name, start, end, days):
         self.num = num
         self.lec_name = lec_name
         self.start = start
@@ -52,7 +52,7 @@ def filter_undergrad_courses(data):
 
     #Penetrate Grad Courses
     for course in data.keys():
-        assert (isinstance(course,str))
+        assert (isinstance(course, str))
         assert (len(course) == 6)
         course_num = course[3]
         if int(course_num) < 5:
@@ -67,15 +67,15 @@ def parse_current_classes(lsa_map):
         for lecture in data[course]['lectures']:
             lec_name = lecture['name']
             for time in lecture['times']:
-                days = time['days'] if isinstance(time['days'],list) else []
+                days = time['days'] if isinstance(time['days'], list) else []
                 if days == []: break
                 if time['location'] == 'Doha, Qatar':
                     break
                 beg = pd.to_datetime(time['begin'])
                 end = pd.to_datetime(time['end'])
                 lsa = lsa_map[course]
-                classes.append(Course(course,beg,end,data[course]['name'],
-                days,lsa,lec_name,data[course]['desc'],data[course]['prereqs']))
+                classes.append(Course(course, beg, end, data[course]['name'],
+                days, lsa, lec_name, data[course]['desc'], data[course]['prereqs']))
     return classes
 
 def parse_calendar(fpath):
@@ -86,8 +86,8 @@ def parse_calendar(fpath):
         days = create_days_from_event(event)
         name = create_name_from_name(event.name)
         num = create_num_from_name(event.name)
-        courses.append(Schedule(num,name,event.begin.datetime,
-                                event.end.datetime,days))
+        courses.append(Schedule(num, name, event.begin.datetime,
+                                event.end.datetime, days))
     return courses
 
 def parse_audit_to_text(fpath):
@@ -113,7 +113,7 @@ def create_name_from_name(string):
     return result.strip()
 
 def create_days_from_event(event):
-    days_dict = {'SU':0,'MO':1,'TU':2,'WE':3,'TH':4,'FR':5,'SA':6}
+    days_dict = {'SU':0, 'MO':1, 'TU':2, 'WE':3, 'TH':4, 'FR':5, 'SA':6}
     string = str(event)
     good_part = string.splitlines()[1]
     better_part = good_part.split(';')[-1]
@@ -198,7 +198,7 @@ def latent_sentiment(data):
     #parse descriptions to list
     for course in course_list:
         desc = data[course]['desc']
-        if isinstance(desc,str):
+        if isinstance(desc, str):
             description_list.append(desc)
         else:
             description_list.append(' ')
@@ -215,71 +215,71 @@ def latent_sentiment(data):
 
     #return a dictionary mapping course number to lsa
     lsa_dict = {}
-    for num,vec in zip(data.keys(),reduced):
+    for num, vec in zip(data.keys(), reduced):
         lsa_dict[num] = list(vec)
     return lsa_dict
 
-def cosine_similarity(v1,v2):
+def cosine_similarity(v1, v2):
     '''
     :param v1:
     :param v2:
     :return:
     '''
-    a_dot_b = np.dot(v1,v2)
-    norm_a_norm_b = (np.sqrt(np.dot(v1,v1))*np.sqrt(np.dot(v2,v2)))
+    a_dot_b = np.dot(v1, v2)
+    norm_a_norm_b = (np.sqrt(np.dot(v1, v1))*np.sqrt(np.dot(v2, v2)))
     similarity = a_dot_b/norm_a_norm_b
     #assert(-1 <= similarity <= 1)
     return similarity
 
-def search_similarity(c1,c2):
-    return cosine_similarity(lsa_map[c1],lsa_map[c2])
+def search_similarity(c1, c2):
+    return cosine_similarity(lsa_map[c1], lsa_map[c2])
 
-def recommend_classes_avg(num,schedulepath,auditpath,available=True):
+def recommend_classes_avg(num, schedulepath, auditpath, available=True):
     if available:
         class_list = filter_available_classes(schedulepath)
     else:
         class_list = semester_classes
     youve_taken = parse_audit_to_text(auditpath)
-    tot = np.zeros((len(youve_taken),100))
-    for i,c in enumerate(youve_taken):
+    tot = np.zeros((len(youve_taken), 100))
+    for i, c in enumerate(youve_taken):
         vec = lsa_map[c]
         tot[i] = vec
     avg = tot.mean(axis=0)
     avg = list(avg)
-    df = pd.DataFrame(class_list,columns=['b'])
+    df = pd.DataFrame(class_list, columns=['b'])
     df['Number'] = df['b'].apply(lambda x: x.number)
     df['Name'] = df['b'].apply(lambda x: x.name)
     df['Similarity'] = df['b'].apply(lambda x: x.similarity(avg))
     df['Remove'] = df['Number'].apply(lambda x: x in youve_taken)
     df = df[df['Remove'] == False]
-    df = df.drop(['Remove','b'],axis=1)
+    df = df.drop(['Remove', 'b'],axis=1)
     df = df.drop_duplicates()
-    most_similar = df.sort_values(by=['Similarity'],ascending=False)
-    most_similar = most_similar.reset_index().drop('index',axis=1)
+    most_similar = df.sort_values(by=['Similarity'], ascending=False)
+    most_similar = most_similar.reset_index().drop('index', axis=1)
     return most_similar.head(num)
 
 def repickle(lsa_map):
     fpath = 'data\\processed_classes.p'
     semester_classes = parse_current_classes(lsa_map)
-    with open(fpath,'wb') as file:
-        pickle.dump(semester_classes,file)
+    with open(fpath, 'wb') as file:
+        pickle.dump(semester_classes, file)
     print ('done')
 
-def export_to_master(num,schedulepath,auditpath):
-    exported = recommend_classes_avg(num,schedulepath,auditpath)
+def export_to_master(num, schedulepath, auditpath):
+    exported = recommend_classes_avg(num, schedulepath, auditpath)
     exported = list(exported['Number'].values)
     return exported
 
 def get_new_semester_data(semester):
     assert(len(semester) == 1)
-    assert(isinstance(semester,str))
+    assert(isinstance(semester, str))
     keep_going = input('Keep Going?')
     if keep_going == 'No' or keep_going == 'no':
         sys.exit()
     #get semester data
     data = cmu_course_api.get_course_data(semester)['courses']
     data = filter_undergrad_courses(data)
-    with open('data\\undergrad_course_info.json','w') as file:
+    with open('data\\undergrad_course_info.json', 'w') as file:
         json.dump(data)
     #get lsa for current semester
     lsa_map2 = latent_sentiment(data)
@@ -287,8 +287,8 @@ def get_new_semester_data(semester):
         if key not in lsa_map2:
             lsa_map2[key] = lsa_map[key]
     print ('lsa data for {} classes'.format(len(lsa_map2)))
-    with open('data\\lsa_vectors{}.json'.format(semester),'w') as file:
-        json.dump(lsa_map2,file)
+    with open('data\\lsa_vectors{}.json'.format(semester), 'w') as file:
+        json.dump(lsa_map2, file)
     #pickle reformatted classes
     repickle(lsa_map2)
     print('done!')
