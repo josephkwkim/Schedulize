@@ -6,7 +6,7 @@ def lookupGenEd(cNum, college):
     fileName = "data/Dietrich Gen Eds.csv"
     picklepath = "data\\dietrich_gen_eds.p"
     try:
-        with open(picklepath,'rb') as file:
+        with open(picklepath, 'rb') as file:
             gen_eds = pickle.load(file)
     except:
         df = pd.read_csv(fileName,names=['Dept', 'Num', 'Title', '1', '2'])
