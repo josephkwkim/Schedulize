@@ -90,13 +90,13 @@ joe = set(lsa_predictions)
 wilson = set(decision_tree_rankings)
 grand_list = joe.intersection(wilson)
 
-masturbater = []
+master_list = []
 for course in grand_list:
     course_score = course_score_d[course]
-    masturbater.append((course, course_score))
+    master_list.append((course, course_score))
 
 import operator
-sorted_recommendations = sorted(masturbater, key=operator.itemgetter(1), reverse=True)  # sorted list of tuples
+sorted_recommendations = sorted(master_list, key=operator.itemgetter(1), reverse=True)  # sorted list of tuples
 
 assert(len(grand_list) == len(sorted_recommendations))
 
