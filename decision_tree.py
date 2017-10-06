@@ -26,7 +26,7 @@ def better_fce():
     files = [f for f in os.listdir(path)]
     for file in files:
         #print (file)
-        df = pd.read_csv(path + file,names=columns)
+        df = pd.read_csv(path + file, names=columns)
         #print (df.shape)
         df = df[keep_columns]
         for course in df['Course ID'].unique():
@@ -41,11 +41,11 @@ def better_fce():
                 dict_key = course
             data[dict_key] = list(avg[1:])
 
-    with open('data\\fce_json.json','w') as file:
+    with open('data\\fce_json.json', 'w') as file:
         json.dump(data,file)
     return data
 
-def preference_score(available_courses, audit, pref_difficulty, pref_rating,must_gened):
+def preference_score(available_courses, audit, pref_difficulty, pref_rating, must_gened):
     # Scores range from very negative (classes to definitely avoid) to 190
     gpa = getGPA(audit)
 
@@ -55,17 +55,17 @@ def preference_score(available_courses, audit, pref_difficulty, pref_rating,must
                         (lambda x: fce_dict[x] if x in fce_dict else np.nan)
     course_scores_df['Hours'] = course_scores_df['Data'].apply(get_hours)
     course_scores_df['Ratings'] = course_scores_df['Data'].apply(get_ratings)
-    course_scores_df = course_scores_df.drop(['Course','Data'],axis=1)
+    course_scores_df = course_scores_df.drop(['Course','Data'], axis=1)
     course_scores_df['Predicted'] = course_scores_df['Hours'] - gpa + 3
 
     scores = []
     for index,row in course_scores_df.iterrows():
-        score = get_score(row['Hours'],row['Ratings'],row['Predicted'],
-                        pref_difficulty,pref_rating,must_gened,row['Number'])
+        score = get_score(row['Hours'],row['Ratings'], row['Predicted'],
+                        pref_difficulty, pref_rating, must_gened, row['Number'])
         scores.append(score)
 
     course_scores_df['Score'] = scores
-    sorted_df = course_scores_df.sort_values(by=['Score'],ascending=False)
+    sorted_df = course_scores_df.sort_values(by=['Score'], ascending=False)
     sorted_df = sorted_df.drop_duplicates()
     return list(sorted_df['Number'].values)
 
@@ -136,8 +136,8 @@ def get_score(diff,rating,predicted_hours,pref_difficulty,pref_rating,must_gened
 #print (top)
 #print ('\n', time.time()-a)
 
-def decision_tree_master(available_courses, audit, pref_difficulty, pref_rating,must_gened):
-    course_rankings = preference_score(available_courses, audit, pref_difficulty, pref_rating,must_gened)
+def decision_tree_master(available_courses, audit, pref_difficulty, pref_rating, must_gened):
+    course_rankings = preference_score(available_courses, audit, pref_difficulty, pref_rating, must_gened)
 
     decision_tree_rankings = top_preferred_courses(course_rankings)
 
