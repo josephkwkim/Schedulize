@@ -1,5 +1,3 @@
-WILSON B. YU
-
 Course-Requirement Matchings
 For B.S. in Statistics and Machine Learning (2016 Catalogue)
 
