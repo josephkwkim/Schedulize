@@ -12,7 +12,7 @@ if __name__ == '__main__':
         data = json.load(file)
         data = json.loads(data)
 
-    # Recommender System
+    # Collaborative Filtering
     train_data = dict()
     train_data["Audit"] = []
     train_data["Schedule"] = []
@@ -27,10 +27,10 @@ if __name__ == '__main__':
 
     recSystem = buildRecommender()
     model, courses = (recSystem[0], recSystem[1]), recSystem[2]
-    user = 0  # Index for Current User - Denote with 0_last_first_academic_audit.txt
+    user = 0  # Index for Current User - Denotes sample_audit_0.txt
     pList = makePrediction(model, user)
     dScores = compileDepartScores(courses, pList)
-    print("Recommender Scores:")
+    print("Collaborative Filtering Ratings:")
     print(dScores)
     print()
 
@@ -75,13 +75,13 @@ if __name__ == '__main__':
     wilson = set(decision_tree_rankings)
     grand_list = joe.intersection(wilson)
 
-    masturbater = []
+    masterList = []
     for course in grand_list:
         course_score = course_score_d[course]
-        masturbater.append((course, course_score))
+        masterList.append((course, course_score))
 
     import operator
-    sorted_recommendations = sorted(masturbater, key=operator.itemgetter(1), reverse=True)  # sorted list of tuples
+    sorted_recommendations = sorted(masterList, key=operator.itemgetter(1), reverse=True)  # sorted list of tuples
 
     assert(len(grand_list) == len(sorted_recommendations))
 
@@ -94,6 +94,7 @@ if __name__ == '__main__':
 
     Also im gonna penetrate the recommendations into a dataframe with information
     """
+
     print("Sorted Recommendations:")
     #loading data into lists to send to dataframe
     course_numbers = []
